@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectChars} from "./store/charsSlice.js";
 import { getChars } from "./store/charsSlice.js";
 
+import ListContainer from "./component/list/listContainer.js";
+
 const Chars = (props) => {
   const dispatch = useDispatch();
   const data = useSelector(selectChars);
@@ -13,11 +15,7 @@ const Chars = (props) => {
 
   return (
     <main>
-      <ul>
-        {data.data.map(item => {
-          return <li key={item.id}>{item.name}</li>;
-        })}
-      </ul>
+      <ListContainer data={data.data} />
       <button onClick={() => {dispatch(getChars())}}>Load More</button>
     </main>
   );
