@@ -4,6 +4,7 @@ import { selectChars} from "./store/charsSlice.js";
 import { getChars } from "./store/charsSlice.js";
 
 import ListContainer from "./component/list/listContainer.js";
+import Button from "./component/btn.js";
 
 const Chars = (props) => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const Chars = (props) => {
   return (
     <main>
       <ListContainer data={data.data} />
-      <button onClick={() => {dispatch(getChars())}}>Load More</button>
+      <Button onClick={() => {dispatch(getChars())}}>Load More</Button>
     </main>
   );
 };
