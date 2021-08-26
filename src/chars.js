@@ -5,6 +5,7 @@ import { getChars } from "./store/charsSlice.js";
 
 import ListContainer from "./component/list/listContainer.js";
 import Button from "./component/btn.js";
+import Search from "./component/search/search.js";
 
 const Chars = (props) => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const Chars = (props) => {
 
   return (
     <main>
+      <Search/>
       <ListContainer data={data.data} />
       <Button onClick={() => {dispatch(getChars())}}>Load More</Button>
     </main>

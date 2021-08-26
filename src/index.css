@@ -29,6 +29,7 @@ html {
 }
 *, *::after, *::before {
   box-sizing: inherit;
+  font-family: inherit;
   margin: 0;
   padding: 0;
 }

@@ -13,13 +13,17 @@ const charSlice = createSlice({
     addChars: (state, action) => {
       state.page++;
       state.data = [...state.data, ...action.payload];
+    },
+    setChars: (state, action) => {
+      state.page = 2;
+      state.data = action.payload;
     }
   }
 });
 
 export default charSlice.reducer;
 
-export const { addChars } = charSlice.actions;
+export const { addChars, setChars } = charSlice.actions;
 
 export const getChars = () => async (dispatch, getState) => {
   let url = "https://rickandmortyapi.com/api/character",
@@ -28,6 +32,14 @@ export const getChars = () => async (dispatch, getState) => {
   data = await data.json();
 
   dispatch(addChars(data.results));
+};
+
+export const getCharsByQuery = (query) => async (dispatch) => {
+  let url = "https://rickandmortyapi.com/api/character/?name=";
+  let data = await fetch(url + query);
+  data = await data.json();
+
+  dispatch(setChars(data.results));
 };
 
 export const selectChars = (state) => state.chars;
