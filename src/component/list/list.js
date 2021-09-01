@@ -24,6 +24,10 @@ const Item = styled.li`
   @media (max-width: 960px) {
     width: 45vw;
   }
+
+  * {
+    text-decoration: none;
+  }
 `;
 
 export { List, Item };
