@@ -7,7 +7,7 @@ import {
   selectSingleChar
 } from "./../../store/singleCharSlice.js";
 
-import Loading from "./loading.js";
+import Loading from "./../loading.js";
 import Button from "./../btn.js";
 import Image from "./../image.js";
 
